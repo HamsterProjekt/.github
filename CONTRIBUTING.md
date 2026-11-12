@@ -1,7 +1,7 @@
 # Contributing
 
 Thanks for helping to keep Hamster alive. HamsterProjekt is a fork of
-[Project Hamster](https://github.com/projecthamster/hamster); see the
+[Hamster Projekt](https://github.com/projecthamster/hamster); see the
 [organization page](https://github.com/HamsterProjekt) for why it exists.
 
 ## Reporting problems

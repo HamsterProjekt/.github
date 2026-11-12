@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <title>Service without GTK</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="2" x2="0" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9b59b6"/>
+      <stop offset="1" stop-color="#7a3f99"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="url(#bg)"/>
+  <rect x="2" y="2" width="44" height="22" rx="10" fill="#fff" opacity=".08"/>
+  <path d="M10 18h28" stroke="#fcfcfc" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M15 18v8M24 18v8M33 18v8" stroke="#fcfcfc" stroke-width="2" opacity=".85"/>
+  <circle cx="15" cy="30" r="4" fill="#fcfcfc"/>
+  <circle cx="24" cy="30" r="4" fill="#fcfcfc"/>
+  <circle cx="33" cy="30" r="4" fill="#fcfcfc"/>
+</svg>

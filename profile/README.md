@@ -1,6 +1,11 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/banner-dark.svg">
+  <img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/banner-light.svg" alt="HamsterProjekt: the time tracker for individuals, revived and modernized" width="100%">
+</picture>
+
 # HamsterProjekt
 
-**A revival and modernization of [Project Hamster](https://github.com/projecthamster/hamster), the time tracker for individuals.**
+**A revival and modernization of [Hamster Projekt](https://github.com/projecthamster/hamster), the time tracker for individuals.**
 
 Hamster helps you keep track of how much time you spend on the activities you
 choose to track. It is a good tool, but upstream development has slowed to a
@@ -8,7 +13,7 @@ crawl: the last release, 3.0.3, is from November 2023, and the project has
 seen little maintenance since. This organization is a fork that aims to keep
 Hamster alive and bring it up to date.
 
-This is an independent fork. It is **not** an official Project Hamster
+This is an independent fork. It is **not** an official Hamster Projekt
 release, and it is not affiliated with or endorsed by the upstream
 maintainers. All credit for Hamster itself goes to its original authors; see
 [Credits](#credits).
@@ -22,23 +27,42 @@ maintainers. All credit for Hamster itself goes to its original authors; see
 
 ## What is different from upstream
 
-- **Markdown storage.** Facts, activities, categories and tags can live in
-  plain Markdown files instead of SQLite. You can read and edit them by hand,
-  and synchronise them between computers with whatever you already use.
-- **A service that runs without GTK**, so other interfaces can sit on top of it.
-- **KDE Plasma 6 support**, through the hamster-kde panel widget and windows.
-- **Step-by-step installation instructions** (`INSTALL.md`) in both repositories.
+<table>
+<tr>
+<td width="56"><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/markdown.svg" width="40" height="40" alt=""></td>
+<td><b>Markdown storage.</b> Facts, activities, categories and tags can live in
+plain Markdown files instead of SQLite. You can read and edit them by hand,
+and synchronise them between computers with whatever you already use.</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/service.svg" width="40" height="40" alt=""></td>
+<td><b>A service that runs without GTK</b>, so other interfaces can sit on top of it.</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/plasma.svg" width="40" height="40" alt=""></td>
+<td><b>KDE Plasma 6 support</b>, through the hamster-kde panel widget and windows.</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/install.svg" width="40" height="40" alt=""></td>
+<td><b>Step-by-step installation instructions</b> (<code>INSTALL.md</code>) in both repositories.</td>
+</tr>
+</table>
 
 ## What stays the same
 
-We try hard not to break what already works:
-
-- SQLite stays the default storage; the Markdown backend is opt-in.
-- The GTK windows are untouched.
-- Hamster's data model, D-Bus interface and the
-  `activity@category, description, #tag` way of entering activities are unchanged.
-
-Anything that speaks to upstream Hamster over D-Bus should keep working here.
+<table>
+<tr>
+<td width="56"><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/compatible.svg" width="40" height="40" alt=""></td>
+<td>We try hard not to break what already works:
+<ul>
+<li>SQLite stays the default storage; the Markdown backend is opt-in.</li>
+<li>The GTK windows are untouched.</li>
+<li>Hamster's data model, D-Bus interface and the
+<code>activity@category, description, #tag</code> way of entering activities are unchanged.</li>
+</ul>
+Anything that speaks to upstream Hamster over D-Bus should keep working here.</td>
+</tr>
+</table>
 
 ## Relationship to upstream
 
@@ -58,7 +82,7 @@ welcome. See [CONTRIBUTING.md](https://github.com/HamsterProjekt/.github/blob/ma
 
 Hamster was written mainly by Toms Bauģis and Patryk Zawadzki, with
 contributions from many others, and was later maintained by Eric Goller and the
-[Project Hamster](https://github.com/projecthamster) community. We build on
+[Hamster Projekt](https://github.com/projecthamster) community. We build on
 their work and are grateful for it.
 
 Hamster is licensed under the GNU GPL v3, and so are the repositories here.

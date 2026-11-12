@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HamsterProjekt style guide</title>
+  <link rel="icon" href="../assets/logo/hamsterprojekt.svg">
+  <link rel="stylesheet" href="hamsterprojekt.css">
+  <style>
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: var(--hp-space-2); }
+    .swatch { border-radius: var(--hp-radius-m); overflow: hidden; border: 1px solid var(--hp-border); background: var(--hp-surface); }
+    .swatch i { display: block; height: 48px; }
+    .swatch div { padding: var(--hp-space-1) var(--hp-space-2); font-size: 0.85em; }
+    .row { display: flex; flex-wrap: wrap; gap: var(--hp-space-3); align-items: center; }
+    .sym { background: #fcfcfc; border-radius: var(--hp-radius-s); padding: 4px; }
+    .stack > * + * { margin-top: var(--hp-space-4); }
+  </style>
+</head>
+<body>
+  <header class="hp-header">
+    <img src="../assets/logo/hamsterprojekt.svg" alt="">
+    <div class="hp-wordmark">Hamster<span>Projekt</span></div>
+    <span class="hp-muted">style guide</span>
+    <span style="flex:1"></span>
+    <button class="hp-button" id="theme">Switch theme</button>
+  </header>
+
+  <main class="hp-container stack">
+    <section>
+      <h1>Style guide</h1>
+      <p class="hp-muted">The original Hamster wheel and its tag chips, redrawn with the KDE Breeze palette.
+        Link <code>hamsterprojekt.css</code> and use the <code>hp-</code> classes and <code>--hp-</code> variables.</p>
+    </section>
+
+    <section>
+      <h2>Logo and icons</h2>
+      <div class="row">
+        <img src="../assets/logo/hamsterprojekt.svg" width="128" height="128" alt="HamsterProjekt logo">
+        <img src="../assets/logo/hamsterprojekt.svg" width="48" height="48" alt="">
+        <img src="../assets/logo/hamsterprojekt.svg" width="22" height="22" alt="">
+        <img class="sym" src="../assets/logo/hamsterprojekt-symbolic.svg" width="32" height="32" alt="Symbolic logo">
+        <img class="sym" src="../assets/icons/hamster-tracking-symbolic.svg" width="32" height="32" alt="Tracking">
+        <img class="sym" src="../assets/icons/hamster-idle-symbolic.svg" width="32" height="32" alt="Idle">
+        <img class="sym" src="../assets/logo/hamsterprojekt-symbolic.svg" width="16" height="16" alt="">
+        <img class="sym" src="../assets/icons/hamster-tracking-symbolic.svg" width="16" height="16" alt="">
+        <img class="sym" src="../assets/icons/hamster-idle-symbolic.svg" width="16" height="16" alt="">
+      </div>
+    </section>
+
+    <section>
+      <h2>Palette</h2>
+      <div class="swatches">
+        <div class="swatch"><i style="background:var(--hp-blue)"></i><div>Plasma blue<br><code>#3daee9</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-blue-strong)"></i><div>Icon blue<br><code>#1d99f3</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-blue-deep)"></i><div>Rim blue<br><code>#1d82c8</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-charcoal)"></i><div>Charcoal<br><code>#31363b</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-cloud)"></i><div>Cloud<br><code>#eff0f1</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-positive)"></i><div>Positive<br><code>#27ae60</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-neutral)"></i><div>Neutral<br><code>#f67400</code></div></div>
+        <div class="swatch"><i style="background:var(--hp-negative)"></i><div>Negative<br><code>#da4453</code></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      <div class="hp-card stack">
+        <div class="row">
+          <span class="hp-status is-tracking">Tracking</span>
+          <span><strong>Super secret project X</strong> <span class="hp-muted">· Work</span></span>
+          <span class="hp-muted">2h 25min</span>
+          <span style="flex:1"></span>
+          <button class="hp-button">Stop</button>
+          <button class="hp-button is-primary">Start new activity</button>
+        </div>
+
+        <table class="hp-facts">
+          <tr>
+            <td class="hp-time">08:30 – 09:00</td>
+            <td><span class="hp-activity">Reading news</span><span class="hp-category">Day-to-day</span><br>
+              <span class="hp-tag">breakfast</span></td>
+            <td class="hp-duration">0h 30min</td>
+          </tr>
+          <tr>
+            <td class="hp-time">09:12 – 11:37</td>
+            <td><span class="hp-activity">Super secret project X</span><span class="hp-category">Work</span>
+              <div class="hp-description">Draft the plan</div>
+              <span class="hp-tag">domination</span><span class="hp-tag">local</span></td>
+            <td class="hp-duration">2h 25min</td>
+          </tr>
+          <tr>
+            <td class="hp-time">11:38 – 12:20</td>
+            <td><span class="hp-activity">Lunch</span><span class="hp-category">Day-to-day</span><br>
+              <span class="hp-tag">food</span><span class="hp-tag">good</span></td>
+            <td class="hp-duration">0h 42min</td>
+          </tr>
+          <tr>
+            <td class="hp-time">12:21 – 14:30</td>
+            <td><span class="hp-activity">Hamster patches</span><span class="hp-category">Open source</span><br>
+              <span class="hp-tag">kde</span></td>
+            <td class="hp-duration">2h 9min</td>
+          </tr>
+        </table>
+
+        <div>
+          <p><strong>Total:</strong> 5h 46min</p>
+          <div class="hp-totals">
+            <span style="--share: 41.9%"></span>
+            <span style="--share: 20.8%"></span>
+            <span style="--share: 37.3%"></span>
+          </div>
+          <div class="hp-legend"><span>Work 2h 25min</span><span>Day-to-day 1h 12min</span><span>Open source 2h 9min</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Feature icons</h2>
+      <div class="hp-features">
+        <div class="hp-feature"><img src="../assets/features/markdown.svg" alt=""><div><h3>Markdown storage</h3><p>Plain files you can read, edit and sync.</p></div></div>
+        <div class="hp-feature"><img src="../assets/features/service.svg" alt=""><div><h3>Service without GTK</h3><p>Other interfaces can sit on top.</p></div></div>
+        <div class="hp-feature"><img src="../assets/features/plasma.svg" alt=""><div><h3>KDE Plasma 6</h3><p>A panel widget and Kirigami windows.</p></div></div>
+        <div class="hp-feature"><img src="../assets/features/install.svg" alt=""><div><h3>Step-by-step install</h3><p>INSTALL.md in every repository.</p></div></div>
+        <div class="hp-feature"><img src="../assets/features/compatible.svg" alt=""><div><h3>Stays compatible</h3><p>SQLite, D-Bus and the data model are unchanged.</p></div></div>
+        <div class="hp-feature"><img src="../assets/features/upstream.svg" alt=""><div><h3>Upstream friendly</h3><p>Small, separable changes we can offer back.</p></div></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('theme').addEventListener('click', () => {
+      const root = document.documentElement;
+      const dark = root.dataset.theme
+        ? root.dataset.theme === 'dark'
+        : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+    });
+  </script>
+</body>
+</html>
