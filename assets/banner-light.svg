@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320">
+  <title>HamsterProjekt: the time tracker for individuals, revived for KDE Plasma</title>
+  <defs>
+    <linearGradient id="rim" x1="0" y1="3" x2="0" y2="37" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3daee9"/>
+      <stop offset="1" stop-color="#1d82c8"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="8" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#dfe4e8"/>
+    </linearGradient>
+    <linearGradient id="stand" x1="0" y1="39" x2="0" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d555b"/>
+      <stop offset="1" stop-color="#31363b"/>
+    </linearGradient>
+  
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset="1" stop-color="#e3e9ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="16" fill="url(#bg)"/>
+  <!-- decorative wheel rungs, bottom right -->
+  <g fill="none" stroke="#3daee9" stroke-linecap="round">
+    <circle cx="1150" cy="300" r="210" stroke-width="18" stroke-dasharray="44 62" opacity=".35"/>
+    <circle cx="1150" cy="300" r="150" stroke-width="3" opacity=".3"/>
+  </g>
+  <g transform="translate(96 64) scale(4)">
+  <!-- ground shadow -->
+  <ellipse cx="24" cy="44.5" rx="19" ry="2" fill="#000" opacity=".12"/>
+  <!-- legs and base -->
+  <path d="M22.6 20 13 41h3.2L24 24.2 31.8 41H35L25.4 20z" fill="#31363b"/>
+  <rect x="5" y="39" width="38" height="5" rx="2" fill="url(#stand)"/>
+  <rect x="5" y="39" width="38" height="1" rx=".5" fill="#fff" opacity=".15"/>
+  <!-- wheel -->
+  <circle cx="24" cy="20" r="17" fill="url(#rim)"/>
+  <circle cx="24" cy="20" r="14.75" fill="none" stroke="#fff" stroke-width="1.6"
+          stroke-dasharray="3.2 4.52" stroke-linecap="round" opacity=".6" transform="rotate(-8 24 20)"/>
+  <circle cx="24" cy="20" r="12.5" fill="#1a6fa8" opacity=".35"/>
+  <circle cx="24" cy="20" r="12" fill="url(#face)"/>
+  <!-- spokes: a long bar and a short hand, so the wheel also reads as a clock -->
+  <g stroke-linecap="round">
+    <path d="M13.6 24.9 34.4 15.1" stroke="#1d99f3" stroke-width="3.2"/>
+    <path d="M24 20 29.3 27.6" stroke="#31363b" stroke-width="2.4"/>
+  </g>
+  <circle cx="24" cy="20" r="3.2" fill="#31363b"/>
+  <circle cx="24" cy="20" r="1.2" fill="#fcfcfc"/>
+  </g>
+  <g font-family="'Noto Sans', 'Segoe UI', Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif">
+    <text x="344" y="150" font-size="72" font-weight="700" fill="#232629" letter-spacing="-1">Hamster<tspan fill="#1d99f3">Projekt</tspan></text>
+    <text x="348" y="202" font-size="28" fill="#4d555b">The time tracker for individuals, revived and modernized.</text>
+    <text x="348" y="244" font-size="22" fill="#4d555b" opacity=".85">Markdown storage · a service without GTK · KDE Plasma 6</text>
+  </g>
+</svg>

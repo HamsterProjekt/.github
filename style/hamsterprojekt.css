@@ -1,0 +1,321 @@
+/*
+ * HamsterProjekt stylesheet
+ *
+ * Design tokens and a few components for HamsterProjekt web pages, HTML
+ * reports and documentation. Based on the original Project Hamster look
+ * (Tango blue wheel, tag chips, the coloured totals bar) and redrawn
+ * with the KDE Breeze palette so it sits well next to Plasma 6.
+ *
+ * Light and dark follow the reader's system setting. Force one with
+ * <html data-theme="light"> or <html data-theme="dark">.
+ *
+ * Licensed under the GNU GPL v3, like the rest of HamsterProjekt.
+ */
+
+/* ------------------------------------------------------------------ */
+/* Tokens                                                              */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Breeze base palette */
+  --hp-blue:        #3daee9;  /* Plasma blue, the default accent       */
+  --hp-blue-strong: #1d99f3;  /* icon blue, the wheel's spoke          */
+  --hp-blue-deep:   #1d82c8;  /* rim shadow, pressed states            */
+  --hp-charcoal:    #31363b;  /* the stand and the hub                 */
+  --hp-shade:       #232629;
+  --hp-paper:       #fcfcfc;
+  --hp-cloud:       #eff0f1;
+
+  /* Status */
+  --hp-positive: #27ae60;     /* tracking                              */
+  --hp-neutral:  #f67400;     /* warnings, unsaved                     */
+  --hp-negative: #da4453;     /* errors, overlaps                      */
+
+  /* Category colours, in the order they are handed out.
+     Soft tints keep the spirit of the original pastel totals bar. */
+  --hp-cat-1: #3daee9;
+  --hp-cat-2: #2ecc71;
+  --hp-cat-3: #f67400;
+  --hp-cat-4: #9b59b6;
+  --hp-cat-5: #fdbc4b;
+  --hp-cat-6: #1abc9c;
+  --hp-cat-7: #da4453;
+  --hp-cat-8: #7f8c8d;
+
+  /* Typography: Noto Sans is the Plasma default */
+  --hp-font: "Noto Sans", "Segoe UI", Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  --hp-font-mono: "Hack", "Noto Sans Mono", "DejaVu Sans Mono", ui-monospace, monospace;
+  --hp-font-size: 10pt;       /* Plasma's default UI size              */
+  --hp-line: 1.5;
+
+  /* Shape and rhythm (Kirigami.Units.smallSpacing is 4 px) */
+  --hp-space-1: 4px;
+  --hp-space-2: 8px;
+  --hp-space-3: 12px;
+  --hp-space-4: 18px;
+  --hp-space-5: 24px;
+  --hp-radius-s: 3px;         /* Breeze buttons and fields             */
+  --hp-radius-m: 6px;         /* cards                                 */
+  --hp-radius-l: 10px;        /* feature tiles, the icon tile radius   */
+  --hp-duration: 150ms;       /* Kirigami.Units.shortDuration          */
+
+  /* Light theme (Breeze) */
+  --hp-bg:          #eff0f1;
+  --hp-surface:     #fcfcfc;
+  --hp-surface-alt: #f4f5f6;
+  --hp-text:        #232629;
+  --hp-text-muted:  #707d8a;
+  --hp-border:      #c4c9cd;
+  --hp-link:        #2980b9;
+  --hp-accent:      var(--hp-blue);
+  --hp-accent-text: #fcfcfc;
+  --hp-chip-bg:     #dfe4e8;
+  --hp-chip-text:   #31363b;
+  --hp-shadow:      0 1px 3px rgb(0 0 0 / 0.12);
+  --hp-focus:       0 0 0 2px rgb(61 174 233 / 0.55);
+
+  color-scheme: light dark;
+}
+
+/* Dark theme (Breeze Dark), automatic */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --hp-bg:          #1b1e20;
+    --hp-surface:     #2a2e32;
+    --hp-surface-alt: #31363b;
+    --hp-text:        #fcfcfc;
+    --hp-text-muted:  #a1a9b1;
+    --hp-border:      #4d555b;
+    --hp-link:        #3daee9;
+    --hp-chip-bg:     #3b4045;
+    --hp-chip-text:   #eff0f1;
+    --hp-shadow:      0 1px 3px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* Dark theme, forced */
+:root[data-theme="dark"] {
+  --hp-bg:          #1b1e20;
+  --hp-surface:     #2a2e32;
+  --hp-surface-alt: #31363b;
+  --hp-text:        #fcfcfc;
+  --hp-text-muted:  #a1a9b1;
+  --hp-border:      #4d555b;
+  --hp-link:        #3daee9;
+  --hp-chip-bg:     #3b4045;
+  --hp-chip-text:   #eff0f1;
+  --hp-shadow:      0 1px 3px rgb(0 0 0 / 0.4);
+  color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+body {
+  margin: 0;
+  background: var(--hp-bg);
+  color: var(--hp-text);
+  font: var(--hp-font-size)/var(--hp-line) var(--hp-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { line-height: 1.25; margin: var(--hp-space-5) 0 var(--hp-space-2); }
+h1 { font-size: 1.9em; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.4em; font-weight: 600; }
+h3 { font-size: 1.1em; font-weight: 600; }
+
+a { color: var(--hp-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, kbd, pre { font-family: var(--hp-font-mono); font-size: 0.95em; }
+code {
+  background: var(--hp-surface-alt);
+  border-radius: var(--hp-radius-s);
+  padding: 0.1em 0.35em;
+}
+
+:focus-visible { outline: none; box-shadow: var(--hp-focus); }
+
+.hp-muted { color: var(--hp-text-muted); }
+.hp-container { max-width: 960px; margin: 0 auto; padding: var(--hp-space-5); }
+
+/* ------------------------------------------------------------------ */
+/* Header                                                              */
+/* ------------------------------------------------------------------ */
+
+.hp-header {
+  display: flex;
+  align-items: center;
+  gap: var(--hp-space-3);
+  padding: var(--hp-space-3) var(--hp-space-5);
+  background: var(--hp-surface);
+  border-bottom: 1px solid var(--hp-border);
+}
+.hp-header img { width: 32px; height: 32px; }
+.hp-wordmark { font-size: 1.35em; font-weight: 700; letter-spacing: -0.01em; }
+.hp-wordmark span { color: var(--hp-blue-strong); }
+
+/* ------------------------------------------------------------------ */
+/* Cards                                                               */
+/* ------------------------------------------------------------------ */
+
+.hp-card {
+  background: var(--hp-surface);
+  border: 1px solid var(--hp-border);
+  border-radius: var(--hp-radius-m);
+  box-shadow: var(--hp-shadow);
+  padding: var(--hp-space-4);
+}
+
+/* ------------------------------------------------------------------ */
+/* Buttons                                                             */
+/* ------------------------------------------------------------------ */
+
+.hp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hp-space-2);
+  padding: 5px 12px;
+  border: 1px solid var(--hp-border);
+  border-radius: var(--hp-radius-s);
+  background: var(--hp-surface);
+  color: var(--hp-text);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--hp-duration), background var(--hp-duration);
+}
+.hp-button:hover { border-color: var(--hp-accent); }
+.hp-button:active { background: var(--hp-surface-alt); }
+.hp-button.is-primary {
+  background: var(--hp-accent);
+  border-color: var(--hp-blue-deep);
+  color: var(--hp-accent-text);
+}
+.hp-button.is-primary:hover { background: var(--hp-blue-strong); }
+.hp-button img { width: 16px; height: 16px; }
+
+/* ------------------------------------------------------------------ */
+/* Tags: the chips Hamster puts under an activity                      */
+/* ------------------------------------------------------------------ */
+
+.hp-tag {
+  display: inline-block;
+  padding: 0 0.5em;
+  border-radius: var(--hp-radius-s);
+  background: var(--hp-chip-bg);
+  color: var(--hp-chip-text);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+.hp-tag::before { content: "#"; opacity: 0.55; }
+
+/* ------------------------------------------------------------------ */
+/* Status badge                                                        */
+/* ------------------------------------------------------------------ */
+
+.hp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+}
+.hp-status::before {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--hp-text-muted);
+}
+.hp-status.is-tracking { color: var(--hp-positive); }
+.hp-status.is-tracking::before { background: var(--hp-positive); }
+
+/* ------------------------------------------------------------------ */
+/* Fact list: one row per tracked activity                             */
+/* ------------------------------------------------------------------ */
+
+.hp-facts { width: 100%; border-collapse: collapse; }
+.hp-facts td {
+  padding: var(--hp-space-2) var(--hp-space-3);
+  vertical-align: top;
+  border-bottom: 1px solid var(--hp-border);
+}
+.hp-facts tr:last-child td { border-bottom: 0; }
+.hp-facts tr:hover td { background: var(--hp-surface-alt); }
+.hp-facts .hp-time,
+.hp-facts .hp-duration { width: 1%; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hp-facts .hp-duration { text-align: right; }
+.hp-facts .hp-activity { font-weight: 600; }
+.hp-facts .hp-category { color: var(--hp-text-muted); }
+.hp-facts .hp-category::before { content: " · "; }
+.hp-facts .hp-description { color: var(--hp-text-muted); margin-top: 2px; }
+.hp-facts .hp-tag { margin: var(--hp-space-1) var(--hp-space-1) 0 0; }
+
+/* ------------------------------------------------------------------ */
+/* Totals bar: share of the day per category                           */
+/* Use: <div class="hp-totals"><span style="--share: 72%"></span>...   */
+/* ------------------------------------------------------------------ */
+
+.hp-totals {
+  display: flex;
+  height: 12px;
+  gap: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--hp-chip-bg);
+}
+.hp-totals > span { flex: 0 0 var(--share, 0%); background: var(--hp-cat-1); }
+.hp-totals > span:nth-child(8n+2) { background: var(--hp-cat-2); }
+.hp-totals > span:nth-child(8n+3) { background: var(--hp-cat-3); }
+.hp-totals > span:nth-child(8n+4) { background: var(--hp-cat-4); }
+.hp-totals > span:nth-child(8n+5) { background: var(--hp-cat-5); }
+.hp-totals > span:nth-child(8n+6) { background: var(--hp-cat-6); }
+.hp-totals > span:nth-child(8n+7) { background: var(--hp-cat-7); }
+.hp-totals > span:nth-child(8n+8) { background: var(--hp-cat-8); }
+
+.hp-legend { display: flex; flex-wrap: wrap; gap: var(--hp-space-4); margin-top: var(--hp-space-2); }
+.hp-legend > span::before {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.4em;
+  border-radius: 2px;
+  background: var(--hp-cat-1);
+}
+.hp-legend > span:nth-child(8n+2)::before { background: var(--hp-cat-2); }
+.hp-legend > span:nth-child(8n+3)::before { background: var(--hp-cat-3); }
+.hp-legend > span:nth-child(8n+4)::before { background: var(--hp-cat-4); }
+.hp-legend > span:nth-child(8n+5)::before { background: var(--hp-cat-5); }
+.hp-legend > span:nth-child(8n+6)::before { background: var(--hp-cat-6); }
+.hp-legend > span:nth-child(8n+7)::before { background: var(--hp-cat-7); }
+.hp-legend > span:nth-child(8n+8)::before { background: var(--hp-cat-8); }
+
+/* ------------------------------------------------------------------ */
+/* Feature grid                                                        */
+/* ------------------------------------------------------------------ */
+
+.hp-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--hp-space-3);
+}
+.hp-feature { display: flex; gap: var(--hp-space-3); align-items: flex-start; }
+.hp-feature img { width: 40px; height: 40px; flex: none; }
+.hp-feature h3 { margin: 0 0 var(--hp-space-1); }
+.hp-feature p { margin: 0; color: var(--hp-text-muted); }
+
+/* ------------------------------------------------------------------ */
+/* Print: reports should print cleanly                                 */
+/* ------------------------------------------------------------------ */
+
+@media print {
+  :root { --hp-bg: #fff; --hp-surface: #fff; --hp-shadow: none; }
+  .hp-header, .hp-button { display: none; }
+  .hp-card { border: 0; padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <title>Stays compatible</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="2" x2="0" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2ecc71"/>
+      <stop offset="1" stop-color="#1f9d55"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="url(#bg)"/>
+  <rect x="2" y="2" width="44" height="22" rx="10" fill="#fff" opacity=".08"/>
+  <path d="M24 9 36 13.5v9.5c0 7.5-5.2 13-12 16-6.8-3-12-8.5-12-16v-9.5z" fill="none" stroke="#fcfcfc" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M18.5 24l4 4 7.5-8" fill="none" stroke="#fcfcfc" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
