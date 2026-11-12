@@ -5,7 +5,7 @@
 
 # HamsterProjekt
 
-**A revival and modernization of [Hamster Projekt](https://github.com/projecthamster/hamster), the time tracker for individuals.**
+**A revival and modernization of [Project Hamster](https://github.com/projecthamster/hamster), the time tracker for individuals.**
 
 Hamster helps you keep track of how much time you spend on the activities you
 choose to track. It is a good tool, but upstream development has slowed to a
@@ -13,7 +13,7 @@ crawl: the last release, 3.0.3, is from November 2023, and the project has
 seen little maintenance since. This organization is a fork that aims to keep
 Hamster alive and bring it up to date.
 
-This is an independent fork. It is **not** an official Hamster Projekt
+This is an independent fork. It is **not** an official Project Hamster
 release, and it is not affiliated with or endorsed by the upstream
 maintainers. All credit for Hamster itself goes to its original authors; see
 [Credits](#credits).
@@ -46,6 +46,13 @@ and synchronise them between computers with whatever you already use.</td>
 <td><img src="https://raw.githubusercontent.com/HamsterProjekt/.github/main/assets/features/install.svg" width="40" height="40" alt=""></td>
 <td><b>Step-by-step installation instructions</b> (<code>INSTALL.md</code>) in both repositories.</td>
 </tr>
+<tr>
+<td></td>
+<td><b>Its own names.</b> The D-Bus services, settings schema and application ids
+are <code>io.github.HamsterProjekt.*</code> instead of upstream's
+<code>org.gnome.Hamster</code>, so the fork and upstream Hamster can be
+installed side by side.</td>
+</tr>
 </table>
 
 ## What stays the same
@@ -57,10 +64,11 @@ and synchronise them between computers with whatever you already use.</td>
 <ul>
 <li>SQLite stays the default storage; the Markdown backend is opt-in.</li>
 <li>The GTK windows are untouched.</li>
-<li>Hamster's data model, D-Bus interface and the
+<li>Hamster's data model, D-Bus methods and signals, and the
 <code>activity@category, description, #tag</code> way of entering activities are unchanged.</li>
 </ul>
-Anything that speaks to upstream Hamster over D-Bus should keep working here.</td>
+A client of upstream Hamster works here once it uses the fork's D-Bus names
+(<code>io.github.HamsterProjekt.Hamster</code> for <code>org.gnome.Hamster</code>).</td>
 </tr>
 </table>
 
@@ -82,7 +90,7 @@ welcome. See [CONTRIBUTING.md](https://github.com/HamsterProjekt/.github/blob/ma
 
 Hamster was written mainly by Toms Bauģis and Patryk Zawadzki, with
 contributions from many others, and was later maintained by Eric Goller and the
-[Hamster Projekt](https://github.com/projecthamster) community. We build on
+[Project Hamster](https://github.com/projecthamster) community. We build on
 their work and are grateful for it.
 
 Hamster is licensed under the GNU GPL v3, and so are the repositories here.

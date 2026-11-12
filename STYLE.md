@@ -1,6 +1,6 @@
 # HamsterProjekt style
 
-HamsterProjekt keeps the look of the original Hamster Projekt, the hamster
+HamsterProjekt keeps the look of the original Project Hamster, the hamster
 wheel on its stand, and redraws it with the KDE
 [Breeze](https://develop.kde.org/hig/) palette so it sits well next to
 Plasma 6.

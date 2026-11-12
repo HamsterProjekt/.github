@@ -1,7 +1,7 @@
 # Contributing
 
 Thanks for helping to keep Hamster alive. HamsterProjekt is a fork of
-[Hamster Projekt](https://github.com/projecthamster/hamster); see the
+[Project Hamster](https://github.com/projecthamster/hamster); see the
 [organization page](https://github.com/HamsterProjekt) for why it exists.
 
 ## Reporting problems
@@ -26,7 +26,9 @@ that.
 4. Explain in the pull request what changes and why.
 
 Do not break compatibility without a good reason: SQLite stays the default,
-and Hamster's data model and D-Bus interface stay as they are.
+and Hamster's data model and D-Bus methods and signals stay as they are.
+The D-Bus, settings and application names are HamsterProjekt's own
+(`io.github.HamsterProjekt.*`); use those, not upstream's `org.gnome.Hamster`.
 
 ## Upstream
 
